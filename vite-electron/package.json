@@ -1,0 +1,86 @@
+{
+  "name": "vite-electron",
+  "private": true,
+  "version": "0.0.0",
+  "main": "electron/main.js",
+  "author": {
+    "name": "Aman Adhikari",
+    "email": "amanadhikari2003@gmail.com"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "serve": "vite preview",
+    "electron": "wait-on tcp:3000 && cross-env IS_DEV=true electron .",
+    "electron:pack": "electron-builder --dir",
+    "electron:dev": "concurrently -k \"cross-env BROWSER=none npm run dev\" \"npm run electron\"",
+    "electron:builder": "electron-builder",
+    "build:for:electron": "tsc --noEmit && cross-env ELECTRON=true vite build",
+    "app:build": "npm run build:for:electron && npm run electron:builder",
+    "build:linux": "npm run build:for:electron && electron-builder --linux",
+    "build:win": "npm run build:for:electron && electron-builder --win"
+  },
+  "build": {
+    "appId": "com.vite-electron.app",
+    "productName": "Vite Electron Chat",
+    "copyright": "Copyright © 2024",
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "category": "Network",
+      "icon": "assets/icon.png",
+      "maintainer": "Your Name <.amanadhikari2003@gmail.com>",
+      "vendor": "PU Minor Project"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "portable"
+        }
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets",
+      "output": "dist_electron"
+    }
+  },
+  "dependencies": {
+    "lucide-react": "^0.471.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "cross-env": "^7.0.3",
+    "concurrently": "^9.1.2",
+    "wait-on": "^8.0.2",
+    "react-hot-toast": "^2.5.1",
+    "react-router-dom": "^7.1.1",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "electron": "^35.0.0",
+    "electron-builder": "^25.1.8",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.2.0"
+  }
+}

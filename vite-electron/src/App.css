@@ -1,0 +1,167 @@
+.app-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 100px;
+  }
+  
+  .login-container input {
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+  }
+  
+  .login-container button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .login-container button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .user-list {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+  }
+  
+  .user-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .user-item:last-child {
+    border-bottom: none;
+  }
+  
+  .user-item button {
+    padding: 5px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .call-manager {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+  
+  .call-controls {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .accept-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .reject-button, .cancel-button, .end-call-button {
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .call-interface {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+  
+  .audio-elements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  .local-audio, .remote-audio {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .mute-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  
+  .mute-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .mute-button.muted {
+    background-color: rgb(254, 226, 226);
+    color: rgb(220, 38, 38);
+  }
+
+  .call-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .call-status.connecting {
+    background-color: #fef3c7;
+    color: #92400e;
+  }
+  
+  .call-status.connected {
+    background-color: #dcfce7;
+    color: #166534;
+  }
+  
+  .call-status.failed {
+    background-color: #fee2e2;
+    color: #991b1b;
+  }
