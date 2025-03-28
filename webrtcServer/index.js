@@ -171,6 +171,9 @@ io.on("connection", (socket) => {
 		}
 		// console.log(offers)
 	})
+	socket.on("endcall",()=>{
+		const offers=[]
+	})
 
 	socket.on("disconnect", () => {
 		console.log("user disconnected", socket.id);

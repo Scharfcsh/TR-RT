@@ -320,6 +320,7 @@ function App2() {
 
   // Add this to your "End Call" button click handler
   const handleEndCall = () => {
+    socket.emit("endCall")
     cleanupCall();
     setSelectedUser(null);
   };

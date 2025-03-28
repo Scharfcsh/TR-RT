@@ -71,7 +71,7 @@ function createWindow() {
   );
   // Open the DevTools.
   if (isDev) {
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
   }
  
 }
